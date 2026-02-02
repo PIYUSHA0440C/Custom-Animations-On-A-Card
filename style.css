@@ -1,0 +1,74 @@
+:root {
+  --pinkish: rgb(255, 0, 123);
+  --blueish: rgb(0, 98, 255);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@property --color {
+  syntax: "<color>";
+  initial-value: rgb(255, 0, 123);
+  inherits: false;
+}
+@keyframes animateColor {
+  from {
+    --color: var(--pinkish);
+  }
+  to {
+    --color: var(--blueish);
+  }
+}
+@keyframes animateBorder {
+  from {
+    --rotate: 1deg;
+  }
+  to {
+    --rotate: 360deg;
+  }
+}
+.card {
+  max-width: 300px;
+  padding-inline: 10px;
+  padding: 20px;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 15px;
+  background: linear-gradient(black) padding-box, conic-gradient(from var(--rotate), black, var(--color), black) border-box;
+  animation: animateBorder 0.4s linear infinite, animateColor 1.5s linear infinite alternate;
+  transition: all linear 0.1s;
+  cursor: pointer;
+}
+.card img {
+  width: 100%;
+}
+
+.card:hover {
+  border: 0.35rem solid transparent;
+  box-shadow: 0px 0px 50px var(--color);
+  text-shadow: 1px 0px 2px var(--color), -1px 0px 2px var(--color);
+  color: var(--color);
+}/*# sourceMappingURL=style.css.map */
