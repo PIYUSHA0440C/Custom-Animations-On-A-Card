@@ -1,5 +1,6 @@
 :root{
-    --pinkish: rgb(255, 0, 123);
+    --pinkish: rgb(255, 0, 195);
+    --pinkish-red: rgb(255, 0, 123);
     --blueish: rgb(0, 98, 255);
 }
 
@@ -42,7 +43,7 @@ body{
 
 @keyframes animateColor{
     from{
-        --color: var(--pinkish);
+        --color: var(--pinkish-red);
     }
     to{
         --color: var(--blueish);
@@ -67,9 +68,13 @@ body{
     flex-direction: column;
     gap: 10px;
     border-radius: 15px;
+    border: 0rem solid transparent;
+    box-shadow: 0px 0px 0px var(--color);
+    text-shadow: 0px 0px 0px var(--color);
     background: linear-gradient(black) padding-box;
-    animation: animateBorder 0.4s linear infinite, animateColor 1.5s linear infinite alternate;
-    transition: all linear 0.1s;
+    animation: animateBorder 0.7s linear infinite, animateColor 1.5s linear infinite alternate;
+    animation-play-state: paused;
+    transition: all linear 0.2s;
     cursor: pointer;
 
     img{
@@ -77,14 +82,24 @@ body{
     }
 }
 .card:hover{
+    border-width: 0.35rem;
+    box-shadow: 0px 0px 50px var(--color);
+    animation-play-state: running ;
     background: linear-gradient(black) padding-box,
                 conic-gradient(from var(--rotate),black,var(--color),black) border-box;
-    border: 0.35rem solid transparent;
-    box-shadow: 0px 0px 50px var(--color);
-    text-shadow: 1px 0px 2px var(--color),
-                -1px 0px 2px var(--color);
+    text-shadow: 0px 0px 10px var(--color);
     color: var(--color);
 }
+
+
+
+
+
+
+
+
+
+
 
 // .outer{
 //     max-width: 300px;
