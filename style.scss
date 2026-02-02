@@ -20,6 +20,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    >p{
+        position: absolute;
+        color: white;
+        bottom: 3rem;
+        text-align: center;
+    }
 }
 
 @property --rotate{

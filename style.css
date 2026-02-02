@@ -21,6 +21,12 @@ body {
   justify-content: center;
   align-items: center;
 }
+body > p {
+  position: absolute;
+  color: white;
+  bottom: 3rem;
+  text-align: center;
+}
 
 @property --rotate {
   syntax: "<angle>";
